@@ -1,0 +1,17 @@
+<form method="POST" action="/addTweet" class="container">
+    <div class="mb-3">
+        <label for="title" class="form-label">Title</label>
+        <input name="title" type="text" class="form-control" id="title" >
+        <% if(errors && errors.title){ %>
+            <div class="cantainer"><span class="warning"><%= errors.title %></span></div>
+        <% } %>
+    </div>
+    <div class="mb-3">
+        <label for="tweet" class="form-label">Tweet</label>
+        <input name="tweet" type="text" class="form-control" id="tweet">
+        <% if(errors && errors.tweet){ %>
+            <div class="cantainer"><span class="warning"><%= errors.tweet %></span></div>
+        <% } %>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>

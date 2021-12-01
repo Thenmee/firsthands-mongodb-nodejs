@@ -1,0 +1,15 @@
+<%- include('./components/header') %>
+        <h1 style="text-align: center;margin:10px">Tweet Details</h1>
+        <div class="card" style="width: 100%;">
+            <div class="card-body">
+                <div >
+                    <span class="card-title"><%= tweet.title %></span>
+                    <span  class="card-text"><%= new Date(tweet.createdAt).toLocaleDateString() %></span>
+                </div>
+               <p class="card-text"><%= tweet.tweet %></p>
+                <a class="btn btn-warning" href="/tweet/edit/<%= tweet._id %>">Edit Tweet</a>
+                <a class="btn btn-danger" href="/delete-tweet/<%= tweet._id %>">Delete Tweet</a>
+            </div>
+        </div>
+
+<%- include('./components/footer') %>

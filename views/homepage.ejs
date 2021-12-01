@@ -1,0 +1,21 @@
+<%- include('./components/header') %>
+        <h1>Welcome To Tweeter</h1>
+        <a href="/addTweet">add tweet</a>
+        <% if (tweets.length){ %>
+                <% tweets.forEach((data) => { %>
+                        <div class="card" style="width: 18rem;">
+                                <div class="card-body">
+                                        <a href="/tweet/<%= data._id %>">
+                                                <h5 class="card-title"><%= data.title %></h5>
+                                        </a>
+                                        
+                                        <span><%= new Date(data.createdAt).toLocaleDateString() %></span>
+                                        <p class="card-text"><%= data.tweet %></p>
+                                </div>
+                        </div>
+                <% }) %>
+        <% } else { %>
+                <p>There is no Tweets</p>
+        <% } %>
+
+<%- include('./components/footer') %>
